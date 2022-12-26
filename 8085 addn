@@ -1,0 +1,38 @@
+lxi h,2200h
+lda 2250h
+mov b,a
+dcr b
+lda 2200h
+loop:inx h
+add m
+mov c,a
+mvi a,00h
+adc d
+mov d,a
+mov a,c
+dcr b
+jnz loop
+sta 22F0h
+mov a,d
+sta 22F1h
+hlt
+
+
+xi h,2200h
+mvi e,04h
+loop:mov b,m
+mov a,c
+add b
+mov c,a
+mvi a,00h
+adc a
+add d
+mov d,a
+inx h
+dcr e
+jnz loop
+mov a,c
+sta 2211h
+mov a,d
+sta 2210h
+hlt
