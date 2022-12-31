@@ -1,0 +1,10 @@
+lda 000h
+mov h,a
+lda 0001h
+sub h
+mov l,a
+mvi a,00h
+sbb a
+mov h,a
+shld 0010h
+HLT
